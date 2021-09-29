@@ -38,7 +38,7 @@ public class ConfirmationPage extends HttpServlet {
 			throws ServletException, IOException {
 		// print writer
 		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
+		response.setContentType("text/jsp");
 
 		HttpSession httpsession = request.getSession();
 		String flightid = (String) httpsession.getAttribute("flightid");
@@ -56,7 +56,7 @@ public class ConfirmationPage extends HttpServlet {
 			List<Flight> flights = session.createQuery(query).list();
 
 			if (flights.size() > 0) {
-				out.print("<a href=\"index.html\">Home</a><br/>");
+				out.print("<a href=\"index.jsp\">Home</a><br/>");
 				out.println("<h1>Congratulations! You're all set, " + firstName + "!</h1><br/><br/>");
 				out.println("<h1>List of Confirmed Flights for " + firstName + "</h1><hr>");
 				out.println("<style> table,th,td { border : 1px solid black ; padding :15px;} </style>");
@@ -119,7 +119,7 @@ public class ConfirmationPage extends HttpServlet {
 				}
 				out.println("</table>");
 			} else {
-				out.print("<a href=\"index.html\">Home</a>");
+				out.print("<a href=\"index.jsp\">Home</a>");
 				out.print("<h1>Sorry You don't have any are no flights currently!<h1>");
 			}
 

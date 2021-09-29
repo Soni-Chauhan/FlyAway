@@ -43,7 +43,7 @@ public class PayOnline extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("payment.html");
+		response.sendRedirect("payment.jsp");
 	}
 
 	/**
@@ -54,7 +54,7 @@ public class PayOnline extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
+		response.setContentType("text/jsp");
 
 		HttpSession httpsession = request.getSession(false);
 
@@ -69,13 +69,13 @@ public class PayOnline extends HttpServlet {
 		try {
 			if ((dateSqlPerson = Date.valueOf(personbirthday)) == null) {
 				out.println("<h1>You must enter the date correctly into yyyy-MM-dd format<h1>");
-				out.print("<a href = \"payment.html\"> Re-enter Information </a><br/>");
+				out.print("<a href = \"payment.jsp\"> Re-enter Information </a><br/>");
 			}
 			;
 
 		} catch (Exception e1) {
 			out.println("<h1>You must enter the date correctly into yyyy-MM-dd format<h1>");
-			out.print("<a href = \"payment.html\"> Re-enter Information </a><br/>");
+			out.print("<a href = \"payment.jsp\"> Re-enter Information </a><br/>");
 		}
 
 		String fName = request.getParameter("firstname");
@@ -90,19 +90,19 @@ public class PayOnline extends HttpServlet {
 
 		} catch (Exception e1) {
 			out.println("<h1>You must enter the date correctly into yyyy-MM-dd format<h1>");
-			out.print("<a href = \"payment.html\"> Re-enter Information </a><br/>");
+			out.print("<a href = \"payment.jsp\"> Re-enter Information </a><br/>");
 		}
 
 		if (!Pattern.matches("\\d{15,16}", cardNumber)) {
-			out.print("<a href = \"payment.html\"> Re-enter Information </a><br/>");
+			out.print("<a href = \"payment.jsp\"> Re-enter Information </a><br/>");
 			out.print("Make sure you are entering your card number in correctly");
 
 		} else if (!Pattern.matches("\\d{3,4}", Integer.toString(securitycode))) {
-			out.print("<a href = \"payment.html\"> Re-enter Information </a><br/>");
+			out.print("<a href = \"payment.jsp\"> Re-enter Information </a><br/>");
 			out.print("Make sure you are entering your security code in correctly");
 		} else if (dateSqlPayment.before(timeBooked)) {
 			out.println("<h1>You must ensure your card is not expired<h1>");
-			out.print("<a href = \"payment.html\"> Re-enter Information </a><br/>");
+			out.print("<a href = \"payment.jsp\"> Re-enter Information </a><br/>");
 		} else {
 
 			// step 1. Confirm Fields Match Criteria
@@ -140,8 +140,8 @@ public class PayOnline extends HttpServlet {
 				session.save(person);
 				session.save(payment);
 
-				String query = "select numberOfSeats from Flight f" + " where id = " + personflightidConverted;
-				int resultFromQ1 = (int) session.createQuery(query).getSingleResult();
+				String query = "select number Of Seats from Flight f" + " where id = " + personflightidConverted;
+				int resultFromQ1 = (Integer) session.createQuery(query).getSingleResult();
 				Query q3 = session.createQuery("update Flight set numberOfSeats=:n where id=:i");
 				q3.setParameter("n", (resultFromQ1 - 1));
 				q3.setParameter("i", personflightidConverted);

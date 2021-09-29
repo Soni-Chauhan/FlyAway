@@ -50,7 +50,7 @@ public class Registeration extends HttpServlet {
 			throws ServletException, IOException {
 		// print writer
 		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
+		response.setContentType("text/jsp");
 
 		HttpSession httpsession = request.getSession();
 		String flightid = request.getParameter("flightid");
@@ -64,16 +64,16 @@ public class Registeration extends HttpServlet {
 		try {
 			dateSqlBirthday = Date.valueOf(birthday);
 		} catch (Exception e1) {
-			out.print("<a href = \"registeration.html\"> Re-Enter Information </a><br/>");
+			out.print("<a href = \"registeration.jsp\"> Re-Enter Information </a><br/>");
 			out.print("Make sure you are entering your date code in correctly (yyyy-MM-dd)");
 		}
 
 		// email
 		if (!(Pattern.matches("[A-Za-z0-9]+(.+)@(.+)", email))) {
-			out.print("<a href = \"registeration.html\"> Re-enter Information </a><br/>");
+			out.print("<a href = \"registeration.jsp\"> Re-enter Information </a><br/>");
 			out.print("Make sure you are entering in a valid email address");
 		} else if (dateSqlBirthday == null) {
-			out.print("<a href = \"registeration.html\"> Re-enter Information </a><br/>");
+			out.print("<a href = \"registeration.jsp\"> Re-enter Information </a><br/>");
 			out.print("Make sure you are entering in a valid date format (yyyy-MM-dd)");
 		} else {
 			httpsession.setAttribute("flightid", flightid);
@@ -103,7 +103,7 @@ public class Registeration extends HttpServlet {
 				List<Flight> flights = session.createQuery(query).list();
 
 				if (flights.size() > 0) {
-					out.print("<a href=\"index.html\">Home</a>");
+					out.print("<a href=\"index.jsp\">Home</a>");
 					out.println("<h1>Confirm Flight Details: </h1>");
 					for (Flight i : flights) {
 						if (i.getNumberOfSeats() > 0) {
@@ -118,9 +118,9 @@ public class Registeration extends HttpServlet {
 							out.println("<hr>");
 						}
 					}
-					request.getRequestDispatcher("payment.html").include(request, response);
+					request.getRequestDispatcher("payment.jsp").include(request, response);
 				} else {
-					out.print("<a href=\"index.html\">Home</a>");
+					out.print("<a href=\"index.jsp\">Home</a>");
 					out.print("<h1>You must enter a valid flight id!<h1>");
 				}
 				session.close();

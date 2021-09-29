@@ -38,7 +38,7 @@ public class SeeAllFlights extends HttpServlet {
 			throws ServletException, IOException {
 		// print writer
 		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
+		response.setContentType("text/jsp");
 
 		String source = request.getParameter("source");
 		String destination = request.getParameter("destination");
@@ -57,7 +57,7 @@ public class SeeAllFlights extends HttpServlet {
 			List<Flight> flights = session.createQuery(query).list();
 
 			if (flights.size() > 0) {
-				out.print("<a href=\"index.html\">Home</a>");
+				out.print("<a href=\"index.jsp\">Home</a>");
 				out.println("<h1>List of all Flights: </h1>");
 				out.println("<style> table,th,td { border : 1px solid black ; padding :15px;} </style>");
 				out.println("<table>");
@@ -118,9 +118,9 @@ public class SeeAllFlights extends HttpServlet {
 					}
 				}
 				out.println("</table>");
-				request.getRequestDispatcher("registeration.html").include(request, response);
+				request.getRequestDispatcher("registeration.jsp").include(request, response);
 			} else {
-				out.print("<a href=\"index.html\">Home</a>");
+				out.print("<a href=\"index.jsp\">Home</a>");
 				out.print("<h1>Sorry there are no flights currently!<h1>");
 			}
 
