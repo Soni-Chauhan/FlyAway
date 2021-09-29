@@ -1,0 +1,12 @@
+
+Sep 29, 2021 15:04:43.919 NEW SESSION
+Sep 29, 2021 15:04:43.919 [9236:11996:0929/150443.847:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+Sep 29, 2021 15:04:43.920 [9236:11996:0929/150443.848:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+Sep 29, 2021 15:04:43.920 [9236:11996:0929/150443.848:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+Sep 29, 2021 15:04:43.920 [9236:11996:0929/150443.850:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
+Sep 29, 2021 15:04:44.117 [9236:9168:0929/150444.117:ERROR:device_event_log_impl.cc(214)] [15:04:44.117] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Sep 29, 2021 16:15:13.96 [9756:6868:0929/161513.096:ERROR:device_event_log_impl.cc(214)] [16:15:13.096] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: A device attached to the system is not functioning. (0x1F)
+Sep 29, 2021 16:15:13.295 [9756:7712:0929/161513.295:ERROR:chrome_browser_main_extra_parts_metrics.cc(228)] crbug.com/1216328: Checking Bluetooth availability started. Please report if there is no report that this ends.
+Sep 29, 2021 16:15:13.296 [9756:7712:0929/161513.296:ERROR:chrome_browser_main_extra_parts_metrics.cc(231)] crbug.com/1216328: Checking Bluetooth availability ended.
+Sep 29, 2021 16:15:13.297 [9756:7712:0929/161513.297:ERROR:chrome_browser_main_extra_parts_metrics.cc(234)] crbug.com/1216328: Checking default browser status started. Please report if there is no report that this ends.
+Sep 29, 2021 16:15:13.299 [9756:7712:0929/161513.299:ERROR:chrome_browser_main_extra_parts_metrics.cc(238)] crbug.com/1216328: Checking default browser status ended.
