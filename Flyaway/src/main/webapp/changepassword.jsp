@@ -8,7 +8,7 @@
 	
 	<h1>Change Password</h1>
 	<form name="change password" method="POST" action="change-password">
-		New Password : <input type="password" name="password"> <br/>
+		New Password: <input type="password" name="password"> <br/>
 		Confirm New Password: <input type="password" name="confirmpassword"> <br/>
 		<br/>
 		<input type="submit" value="Change password">

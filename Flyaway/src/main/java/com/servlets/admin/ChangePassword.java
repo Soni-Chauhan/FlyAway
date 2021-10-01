@@ -41,9 +41,8 @@ public class ChangePassword extends HttpServlet
                 final int status = q3.executeUpdate();
                 System.out.println(status);
                 session.getTransaction().commit();
-                session.close();
                 out.write("Password Changed Succesfully");
-                out.close();
+                
             }
             catch (Exception e) {
                 e.printStackTrace();

@@ -9,7 +9,7 @@
 	<h1>Admin Login Page</h1>
 	<form name="loginForm" method="POST" action="login">
 		Username: <input type="text" name="username"> <br/>
-		Password : <input type="password" name="password"> <br/>
+		Password: <input type="password" name="password"> <br/>
 		<br/>
 		<input type="submit" value="Login">
 	</form>

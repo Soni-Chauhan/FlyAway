@@ -4,5 +4,3 @@ INDEX VERSION 1.4+C:\Users\hi\Desktop\P2-project\Flyaway\.metadata\.plugins\org.
 1487374708.index
 2170679803.index
 2021541740.index
-1631059198.index
-2230598474.index

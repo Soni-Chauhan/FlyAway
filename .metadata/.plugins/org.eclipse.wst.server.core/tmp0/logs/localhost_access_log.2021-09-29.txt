@@ -59,3 +59,5 @@
 0:0:0:0:0:0:0:1 - - [29/Sep/2021:22:00:10 +0530] "POST /Flyaway/change-password HTTP/1.1" 200 -
 0:0:0:0:0:0:0:1 - - [29/Sep/2021:22:00:18 +0530] "GET /Flyaway/dashboard.jsp HTTP/1.1" 200 417
 0:0:0:0:0:0:0:1 - - [29/Sep/2021:22:00:21 +0530] "GET /Flyaway/list-airlines HTTP/1.1" 200 537
+127.0.0.1 - - [29/Sep/2021:22:18:29 +0530] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [29/Sep/2021:22:18:30 +0530] "GET /Flyaway/index.jsp HTTP/1.1" 200 715
